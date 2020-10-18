@@ -17,17 +17,19 @@ TiempoEspera="3"
 let NoAudiosWav="0"
 
 DirRaiz=$(pwd)
-PesoWav=$(du -hs)
 
 sleep $TiempoEspera
+
+let TotalAudios=$(find . -maxdepth 1 -type f -iname "*.wav" | wc -l)
+
+if [ $TotalAudios -gt $NoAudiosWav ]; then
+
 echo "- Iniciando Conversion de Audios: " $(date +"%d/%m/%Y %T")
 echo ""
 
 mkdir formato_mp3
 
-let TotalAudios=$(find . -maxdepth 1 -type f -iname "*.wav" | wc -l)
-
-if [ $TotalWav -gt $NoAudiosWav ]; then
+PesoWav=$(du -hs)
 
 TimeInitConvert=$(date +"%d/%m/%Y %T")
 

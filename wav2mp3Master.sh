@@ -8,14 +8,14 @@ TiempoEspera="3"
 
 ### CONVERSION DE FORMATO
 cd $DirScripts
-cp -rf wav2mp3SLAVE.sh $DirDestino
+cp -rf wav2mp3Slave.sh $DirDestino
 cd $DirDestino
 echo ""
 echo "- Script Copiado para ejecucion: "  $(date +"%d/%m/%Y %T")
 echo ""
 
 sleep $TiempoEspera
-#sleep 2m
+
 #echo "- Iniciando Conversion de Audios: " $(date +"%d/%m/%Y %T")
-#echo ""
+
 bash wav2mp3Slave.sh > /var/log/log_wav2mp3.log
